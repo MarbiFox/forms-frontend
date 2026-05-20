@@ -5,5 +5,13 @@
   "background_color": "#FFFFFF",
   "theme_color": "#14BDC6",
   "start_url": ".",
-  "lang": "es"
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }

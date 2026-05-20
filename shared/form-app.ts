@@ -1,4 +1,4 @@
-import { OWL_HAPPY_SVG, OWL_SVG } from './assets/owl.svg';
+import { appIconImg } from './assets/app-icon';
 import { LikertScaleComponent } from './components/likert-scale.component';
 import { OpenQuestionComponent } from './components/open-question.component';
 import { ProgressBarComponent } from './components/progress-bar.component';
@@ -41,7 +41,7 @@ export class FormApp {
     mount.id = 'app';
     mount.innerHTML = `
       <header class="app-header">
-        <div class="app-header__brand">${OWL_SVG}<div><div>UX Training App</div><div class="app-header__label">${options.config.formLabel}</div></div></div>
+        <div class="app-header__brand">${appIconImg('sm')}<div><div>UX Training App</div><div class="app-header__label">${options.config.formLabel}</div></div></div>
         <div class="app-header__counter" data-counter></div>
       </header>
       <div class="app-subheader" data-subheader>
@@ -181,7 +181,7 @@ export class FormApp {
     screen.className = 'screen screen--intro';
 
     screen.innerHTML = `
-      <div class="screen__owl" aria-hidden="true">${OWL_SVG}</div>
+      ${appIconImg('lg')}
       <h1 class="screen__title">${intro.title}</h1>
       <p class="screen__text">${intro.text}</p>
     `;
@@ -417,7 +417,9 @@ export class FormApp {
     this.mainEl.classList.remove('app-main--with-intro');
     this.mainEl.innerHTML = `
       <div class="screen screen--submitting">
-        <div class="submit-spinner" role="status" aria-live="polite" aria-label="Enviando respuestas"></div>
+        <div role="status" aria-live="polite" aria-label="Enviando respuestas">
+          ${appIconImg('loading')}
+        </div>
         <p class="screen__text">Enviando respuestas…</p>
       </div>
     `;
@@ -472,7 +474,7 @@ export class FormApp {
     if (this.options.config.formId === 'pretest') {
       const pwd = this.entryPasswordResult;
       screen.innerHTML = `
-        ${OWL_HAPPY_SVG}
+        ${appIconImg('lg')}
         <h1 class="screen__title">${complete.title}</h1>
         <p class="access-password" data-password-display>${pwd}</p>
         <p class="hint-text">Anótala también en tu documento guía</p>
@@ -490,7 +492,7 @@ export class FormApp {
       this.footerEl.appendChild(copyBtn);
     } else {
       screen.innerHTML = `
-        ${OWL_HAPPY_SVG}
+        ${appIconImg('lg')}
         <h1 class="screen__title">${complete.title}</h1>
         ${complete.subtitle ? `<p class="screen__text">${complete.subtitle}</p>` : ''}
       `;

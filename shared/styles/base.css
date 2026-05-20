@@ -54,9 +54,7 @@ body {
   font-size: 0.85rem;
 }
 
-.app-header__brand svg {
-  width: 32px;
-  height: 32px;
+.app-header__brand .app-icon {
   flex-shrink: 0;
 }
 
@@ -247,18 +245,46 @@ body {
   gap: 1.25rem;
 }
 
-.submit-spinner {
-  width: 52px;
-  height: 52px;
-  border: 3px solid var(--color-primary-soft);
-  border-top-color: var(--color-primary);
-  border-radius: 50%;
-  animation: submit-spin 0.75s linear infinite;
+.app-icon {
+  display: block;
+  object-fit: contain;
 }
 
-@keyframes submit-spin {
-  to {
-    transform: rotate(360deg);
+.app-icon--sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.app-icon--md {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.app-icon--lg {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.25rem;
+  border-radius: 20px;
+}
+
+.app-icon--loading {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  animation: app-icon-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes app-icon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(0.94);
   }
 }
 
@@ -273,12 +299,6 @@ body {
   line-height: 1.55;
   margin-bottom: 1.25rem;
   font-size: 0.95rem;
-}
-
-.screen__owl {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.25rem;
 }
 
 .consent-row {
