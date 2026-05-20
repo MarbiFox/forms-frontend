@@ -212,33 +212,65 @@ export class FormApp {
     } else if (intro.requiresPassword) {
       const field = document.createElement('div');
       field.className = 'password-field';
-      field.innerHTML = `<input type="text" maxlength="32" autocomplete="off" placeholder="Contraseña" aria-label="Contraseña de cierre" data-password />`;
+      field.innerHTML = `<input type="text" maxlength="32" autocomplete="off" placeholder="Contraseña de cierre" aria-label="Contraseña de cierre" aria-describedby="password-error" data-password />`;
       screen.appendChild(field);
 
       const error = document.createElement('p');
       error.className = 'field-error';
+      error.id = 'password-error';
       error.hidden = true;
+      error.setAttribute('role', 'alert');
       screen.appendChild(error);
 
       const input = field.querySelector('[data-password]') as HTMLInputElement;
       input.value = this.state.getClosingPassword();
 
+      const clearError = (): void => {
+        field.classList.remove('password-field--error');
+        error.hidden = true;
+        error.textContent = '';
+        input.removeAttribute('aria-invalid');
+      };
+
+      input.addEventListener('input', clearError);
+
       const btn = this.createPrimaryButton('Comenzar →', false);
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         const pwd = input.value.trim();
         if (pwd.length < 6) {
           field.classList.add('password-field--error', 'password-field--shake');
           error.hidden = false;
           error.textContent = 'Ingresa la contraseña de cierre (mínimo 6 caracteres).';
+          input.setAttribute('aria-invalid', 'true');
           setTimeout(() => field.classList.remove('password-field--shake'), 500);
           return;
         }
-        field.classList.remove('password-field--error');
-        error.hidden = true;
-        this.state.setClosingPassword(pwd);
-        this.state.startForm();
-        this.state.restorePositionFromAnswers();
-        this.render();
+
+        btn.disabled = true;
+        btn.textContent = 'Verificando…';
+        input.disabled = true;
+
+        try {
+          await this.api.validatePostTestPassword(pwd);
+          clearError();
+          this.state.setClosingPassword(pwd);
+          this.state.startForm();
+          this.state.restorePositionFromAnswers();
+          this.render();
+        } catch (err) {
+          field.classList.add('password-field--error', 'password-field--shake');
+          error.hidden = false;
+          error.textContent =
+            err instanceof Error
+              ? err.message
+              : 'Contraseña de cierre incorrecta. Inténtalo de nuevo.';
+          input.setAttribute('aria-invalid', 'true');
+          setTimeout(() => field.classList.remove('password-field--shake'), 500);
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Comenzar →';
+          input.disabled = false;
+        }
       });
 
       this.footerEl.innerHTML = '';

@@ -19,7 +19,7 @@ body {
   font-size: var(--font-size-base);
   font-weight: 400;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,6 +29,7 @@ body {
   height: 100dvh;
   overflow: hidden;
   position: relative;
+  background: var(--color-bg-alt);
 }
 
 .app-header {
@@ -38,7 +39,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
   position: fixed;
   top: 0;
   left: 0;
@@ -59,7 +60,7 @@ body {
 }
 
 .app-header__label {
-  color: var(--color-text-secondary);
+  color: var(--color-brand-mid);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -82,7 +83,7 @@ body {
   justify-content: center;
   min-height: var(--subheader-height);
   padding: 0.45rem 1rem 0.5rem;
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
 }
 
 .section-pills {
@@ -133,7 +134,7 @@ body {
   left: 0;
   right: 0;
   z-index: 10;
-  background: linear-gradient(to top, var(--color-bg) 70%, transparent);
+  background: linear-gradient(to top, var(--color-bg-alt) 70%, transparent);
 }
 
 .btn-primary {
@@ -201,8 +202,8 @@ body {
 }
 
 .btn-back:hover:not(:disabled) {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--color-brand-mid);
+  color: var(--color-brand);
 }
 
 .btn-back:disabled {
@@ -235,7 +236,12 @@ body {
 .screen--intro,
 .screen--close,
 .screen--submitting {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  max-width: 520px;
+  width: 100%;
 }
 
 .screen--submitting {
@@ -315,7 +321,7 @@ body {
   margin-top: 0.2rem;
   width: 18px;
   height: 18px;
-  accent-color: var(--color-accent-dark);
+  accent-color: var(--color-brand);
 }
 
 .password-field {
@@ -332,14 +338,13 @@ body {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
   font-family: inherit;
-  text-transform: uppercase;
 }
 
 .password-field input:focus {
   outline: none;
-  border-color: var(--color-primary);
+  border-color: var(--color-brand-mid);
 }
 
 .password-field--error input {
@@ -359,7 +364,7 @@ body {
 .access-password {
   font-size: 2.25rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-brand-mid);
   letter-spacing: 0.08em;
   margin: 1rem 0;
 }
@@ -382,6 +387,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding: 1rem 1.1rem 1.15rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -457,8 +466,8 @@ body {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-primary);
-  background: var(--color-primary-soft);
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   margin-bottom: 0.5rem;

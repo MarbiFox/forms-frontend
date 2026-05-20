@@ -91,7 +91,7 @@ export class FormStateService {
   }
 
   setClosingPassword(password: string): void {
-    this.state.closingPassword = password.trim().toUpperCase();
+    this.state.closingPassword = password.trim();
     this.persist();
   }
 

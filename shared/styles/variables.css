@@ -1,11 +1,23 @@
 :root {
-  --color-primary: #14bdc6;
-  --color-primary-soft: #c1e6ec;
-  --color-accent-dark: #104911;
-  --color-accent-mid: #548c2f;
+  /* Marca (logo + pantallas intro) */
+  --color-brand: #104911;
+  --color-brand-mid: #548c2f;
+  --color-brand-soft: #e8f2e4;
+  --color-brand-muted: #c5d9bc;
+
+  /* Acento secundario — teal (ancla positiva UEQ-S) */
+  --color-accent: #14bdc6;
+  --color-accent-soft: #c1e6ec;
+
+  /* Alias usados en componentes */
+  --color-primary: var(--color-brand-mid);
+  --color-primary-soft: var(--color-brand-muted);
+  --color-accent-dark: var(--color-brand);
+  --color-accent-mid: var(--color-brand-mid);
   --color-accent-yellow: #ffba49;
+
   --color-bg: #ffffff;
-  --color-bg-alt: #f7f8fa;
+  --color-bg-alt: #f4f8f2;
   --color-text: #1a1a1a;
   --color-text-secondary: #6b7280;
   --color-error: #d64545;
@@ -14,7 +26,7 @@
   --font-size-base: 16px;
   --radius-card: 20px;
   --radius-button: 14px;
-  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 2px 12px rgba(16, 73, 17, 0.08);
   --transition-base: all 0.25s ease;
   --header-height: 12dvh;
   --subheader-height: 32px;

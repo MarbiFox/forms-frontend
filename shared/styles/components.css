@@ -46,7 +46,7 @@
 
 .scale-anchor--high {
   text-align: right;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-weight: 600;
   padding-left: 0.25rem;
 }
