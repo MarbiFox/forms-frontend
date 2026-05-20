@@ -7,7 +7,7 @@ import '../shared/styles/base.css';
 import '../shared/styles/components.css';
 import './styles.css';
 
-const apiBaseUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
+const apiBaseUrl = import.meta.env.VITE_API_URL;
 
 const mount = document.getElementById('root');
 if (!mount) {
