@@ -83,7 +83,7 @@ export class FormApp {
       if (intro.requiresConsent && this.state.hasConsent()) {
         this.state.startForm();
         this.state.restorePositionFromAnswers();
-      } else if (intro.requiresPassword && this.state.getClosingPassword().length >= 6) {
+      } else if (intro.requiresPassword && this.state.getClosingPassword().length >= 5) {
         this.state.startForm();
         this.state.restorePositionFromAnswers();
       }
@@ -237,10 +237,10 @@ export class FormApp {
       const btn = this.createPrimaryButton('Comenzar →', false);
       btn.addEventListener('click', async () => {
         const pwd = input.value.trim();
-        if (pwd.length < 6) {
+        if (pwd.length < 5) {
           field.classList.add('password-field--error', 'password-field--shake');
           error.hidden = false;
-          error.textContent = 'Ingresa la contraseña de cierre (mínimo 6 caracteres).';
+          error.textContent = 'Ingresa la contraseña de cierre (mínimo 5 caracteres).';
           input.setAttribute('aria-invalid', 'true');
           setTimeout(() => field.classList.remove('password-field--shake'), 500);
           return;
