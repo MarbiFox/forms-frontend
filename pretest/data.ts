@@ -15,10 +15,10 @@ export const PRETEST_CONFIG: FormConfig = {
   formId: 'pretest',
   formLabel: 'Pre-Test',
   closedItemCount: 14,
-  openItemCount: 5,
+  openItemCount: 0,
   intro: {
     title: 'Pre-Test · Prueba con Usuarios',
-    text: 'Antes de usar la aplicación, queremos conocer tus expectativas. El formulario toma aproximadamente 3 minutos. Tus respuestas son anónimas.',
+    text: 'Antes de usar la aplicación, queremos conocer tus expectativas. El formulario toma aproximadamente 2 minutos. Tus respuestas son anónimas.',
     requiresConsent: true,
   },
   complete: {
@@ -86,47 +86,6 @@ export const PRETEST_CONFIG: FormConfig = {
           key: 'tam_6',
           instrument: 'TAM',
           text: 'Encontraré esta aplicación útil para mi formación en UX.',
-        },
-      ],
-    },
-    {
-      id: 'open',
-      name: 'Abiertas',
-      transition: {
-        title: 'Cuéntanos qué esperas',
-        icon: '💬',
-        hint: 'Estas preguntas son sobre cada módulo de la app. Responde con lo que pienses, no hay respuestas incorrectas.',
-      },
-      items: [
-        {
-          type: 'open',
-          key: 'open_1',
-          module: 'Módulo de Ejercicios',
-          text: '¿Qué esperas aprender con los ejercicios de evaluación heurística, diseño UI y pruebas con usuarios? ¿Crees que este tipo de práctica interactiva puede ayudarte a mejorar tus habilidades en UX?',
-        },
-        {
-          type: 'open',
-          key: 'open_2',
-          module: 'Módulo de Perfil',
-          text: '¿Qué importancia le das a poder ver tus métricas de entrenamiento (nivel, puntos, racha) en tu perfil? ¿Crees que eso te motivaría a seguir usando la aplicación?',
-        },
-        {
-          type: 'open',
-          key: 'open_3',
-          module: 'Módulo de Progreso',
-          text: '¿Esperarías que la aplicación te muestre estadísticas de tu avance y te sugiera en qué áreas mejorar? ¿Cómo crees que eso influiría en tu aprendizaje?',
-        },
-        {
-          type: 'open',
-          key: 'open_4',
-          module: 'Módulo de Recompensas',
-          text: '¿Crees que ganar insignias y logros al completar ejercicios te motivaría a seguir practicando? ¿Por qué sí o por qué no?',
-        },
-        {
-          type: 'open',
-          key: 'open_5',
-          module: 'Módulo de Personalización',
-          text: '¿Qué tan importante te parece poder ajustar el nivel de dificultad, elegir áreas de interés o activar el modo oscuro? ¿Qué personalizaciones valorarías más?',
         },
       ],
     },

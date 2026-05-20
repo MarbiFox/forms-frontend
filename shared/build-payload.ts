@@ -13,14 +13,11 @@ function collectOpen(keys: string[], answers: Record<string, number | string>): 
 
 const UEQ_KEYS = ['ueq_1', 'ueq_2', 'ueq_3', 'ueq_4', 'ueq_5', 'ueq_6', 'ueq_7', 'ueq_8'];
 const TAM_PRE_KEYS = ['tam_1', 'tam_2', 'tam_3', 'tam_4', 'tam_5', 'tam_6'];
-const OPEN_PRE_KEYS = ['open_1', 'open_2', 'open_3', 'open_4', 'open_5'];
-
 export function buildPreTestAnswers(state: FormStateService): Record<string, unknown> {
   const answers = state.getAllAnswers();
   return {
     ueqs_pre: collectNumeric(UEQ_KEYS, answers),
     tam_pre: collectNumeric(TAM_PRE_KEYS, answers),
-    open_pre: collectOpen(OPEN_PRE_KEYS, answers),
   };
 }
 
