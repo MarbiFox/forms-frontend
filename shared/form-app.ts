@@ -110,7 +110,8 @@ export class FormApp {
     const phase = this.getDisplayPhase();
     const inForm = phase === 'question';
 
-    this.headerEl.style.display = phase === 'intro' || phase === 'complete' ? 'none' : 'flex';
+    this.headerEl.style.display =
+      phase === 'intro' || phase === 'complete' || phase === 'submitting' ? 'none' : 'flex';
     this.pillsEl.closest('.app-subheader')!.style.display = inForm ? 'flex' : 'none';
     this.progressRoot.style.display = inForm && !this.state.isSectionIntroPending() ? 'block' : 'none';
 
@@ -413,7 +414,13 @@ export class FormApp {
   }
 
   private renderSubmitting(): void {
-    this.mainEl.innerHTML = '<div class="screen"><p class="screen__text">Enviando respuestas…</p></div>';
+    this.mainEl.classList.remove('app-main--with-intro');
+    this.mainEl.innerHTML = `
+      <div class="screen screen--submitting">
+        <div class="submit-spinner" role="status" aria-live="polite" aria-label="Enviando respuestas"></div>
+        <p class="screen__text">Enviando respuestas…</p>
+      </div>
+    `;
     this.footerEl.innerHTML = '';
   }
 
