@@ -1,0 +1,19 @@
+{
+  "name": "forms-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:pretest": "vite --config vite.pretest.config.ts",
+    "dev:posttest": "vite --config vite.posttest.config.ts",
+    "build:pretest": "vite build --config vite.pretest.config.ts",
+    "build:posttest": "vite build --config vite.posttest.config.ts",
+    "build": "npm run build:pretest && npm run build:posttest",
+    "preview:pretest": "vite preview --config vite.pretest.config.ts",
+    "preview:posttest": "vite preview --config vite.posttest.config.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

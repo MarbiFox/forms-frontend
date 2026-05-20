@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
+export default defineConfig({
+  root: resolve(__dirname, 'pretest'),
+  publicDir: resolve(__dirname, 'public'),
+  build: {
+    outDir: resolve(__dirname, 'dist/pretest'),
+    emptyOutDir: true,
+  },
+  server: {
+    port: 5173,
+    fs: { allow: [resolve(__dirname)] },
+  },
+});

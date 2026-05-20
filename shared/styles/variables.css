@@ -1,0 +1,30 @@
+:root {
+  --color-primary: #14bdc6;
+  --color-primary-soft: #c1e6ec;
+  --color-accent-dark: #104911;
+  --color-accent-mid: #548c2f;
+  --color-accent-yellow: #ffba49;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f8fa;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-error: #d64545;
+
+  --font-family: 'Poppins', system-ui, sans-serif;
+  --font-size-base: 16px;
+  --radius-card: 20px;
+  --radius-button: 14px;
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --transition-base: all 0.25s ease;
+  --header-height: 12dvh;
+  --subheader-height: 32px;
+  --chrome-top: calc(var(--header-height) + var(--subheader-height) + 6px);
+  --footer-height: 16dvh;
+  --zone-height: 72dvh;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 18px;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "UX Training App — Formulario",
+  "short_name": "UX Form",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#14BDC6",
+  "start_url": ".",
+  "lang": "es"
+}
