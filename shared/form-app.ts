@@ -510,6 +510,7 @@ export class FormApp {
         <h1 class="screen__title">${complete.title}</h1>
         <p class="access-password" data-password-display>${pwd}</p>
         <p class="hint-text">Anótala también en tu documento guía</p>
+        <a class="continue-link" href="https://uxapp.marbidev.xyz" target="_blank" rel="noopener">Haz click aquí para continuar →</a>
       `;
       const copyBtn = this.createSecondaryButton('Copiar contraseña');
       copyBtn.addEventListener('click', async () => {

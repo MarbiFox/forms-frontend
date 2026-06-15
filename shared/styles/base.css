@@ -375,6 +375,23 @@ body {
   margin-top: 0.75rem;
 }
 
+.continue-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--color-brand-dark, #104911);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.continue-link:hover {
+  opacity: 0.88;
+}
+
 .footer-hint {
   font-size: 0.85rem;
   color: var(--color-text-secondary);
